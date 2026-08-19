@@ -77,9 +77,3 @@ Environment variables are documented (names only, never values) in
 `.env.example` at the project root and in `docs/SECURITY.md`. Never commit
 real credentials.
 
-## Product naming
-
-The product name is **Worklyn** only. There is no "FreelancerOS" product.
-Any `freelanceros_*` references found in Stitch export artifacts are legacy
-export names and must not appear in the application, its UI, or its
-documentation.
