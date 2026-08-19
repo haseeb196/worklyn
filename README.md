@@ -66,8 +66,6 @@ PROJECT_STATUS.md
 
 ## Getting started
 
-Once Phase 1 is implemented, the project will be run locally with:
-
 ```bash
 npm install
 npm run dev
