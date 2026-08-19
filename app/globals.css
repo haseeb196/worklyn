@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Worklyn design tokens — source of truth: worklyn/DESIGN.md (Stitch export) */
+  --surface: #fcf8ff;
+  --surface-dim: #dbd8e4;
+  --surface-bright: #fcf8ff;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f5f2fe;
+  --surface-container: #efecf8;
+  --surface-container-high: #e9e7f2;
+  --surface-container-highest: #e4e1ec;
+  --on-surface: #1b1b23;
+  --on-surface-variant: #464554;
+  --inverse-surface: #303038;
+  --inverse-on-surface: #f2effb;
+  --outline: #767586;
+  --outline-variant: #c6c5d7;
+  --surface-tint: #484bd6;
+
+  --primary: #2c2abc;
+  --on-primary: #ffffff;
+  --primary-container: #4648d4;
+  --on-primary-container: #d1d1ff;
+  --inverse-primary: #c0c1ff;
+  --primary-fixed: #e1e0ff;
+  --primary-fixed-dim: #c0c1ff;
+  --on-primary-fixed: #06006c;
+  --on-primary-fixed-variant: #2e2ebe;
+
+  --secondary: #565e74;
+  --on-secondary: #ffffff;
+  --secondary-container: #d7dff9;
+  --on-secondary-container: #5a6278;
+  --secondary-fixed: #dae2fc;
+  --secondary-fixed-dim: #bec6e0;
+  --on-secondary-fixed: #131b2e;
+  --on-secondary-fixed-variant: #3e465b;
+
+  --tertiary: #6d3600;
+  --on-tertiary: #ffffff;
+  --tertiary-container: #904900;
+  --on-tertiary-container: #ffcaa6;
+  --tertiary-fixed: #ffdcc5;
+  --tertiary-fixed-dim: #ffb782;
+  --on-tertiary-fixed: #301400;
+  --on-tertiary-fixed-variant: #703800;
+
+  --error: #ba1a1a;
+  --on-error: #ffffff;
+  --error-container: #ffdad6;
+  --on-error-container: #93000a;
+
+  --background: #fcf8ff;
+  --on-background: #1b1b23;
+  --surface-variant: #e4e1ec;
+
+  --success: #10b981;
+  --warning: #f59e0b;
+  --destructive: #ef4444;
+
+  --slate-50: #f8fafc;
+  --slate-100: #f1f5f9;
+  --slate-200: #e2e8f0;
+  --slate-900: #0f172a;
+  --zinc-dark-bg: #09090b;
+  --zinc-dark-surface: #18181b;
+
+  --radius: 0.5rem;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+
+  /* shadcn/ui compatibility tokens, mapped onto the Worklyn palette */
+  --card: var(--surface-container-lowest);
+  --card-foreground: var(--on-surface);
+  --popover: var(--surface-container-lowest);
+  --popover-foreground: var(--on-surface);
+  --muted: var(--slate-100);
+  --muted-foreground: var(--secondary);
+  --accent: var(--secondary-container);
+  --accent-foreground: var(--on-secondary-container);
+  --border: var(--slate-200);
+  --input: var(--slate-200);
+  --ring: var(--primary);
+}
+
+.dark {
+  --surface: #09090b;
+  --surface-dim: #09090b;
+  --surface-bright: #27272a;
+  --surface-container-low: #18181b;
+  --surface-container: #202023;
+  --surface-container-high: #27272a;
+  --surface-container-highest: #3f3f46;
+  --on-surface: #f2effb;
+  --on-surface-variant: #c4c1cf;
+  --outline: #a1a1aa;
+  --outline-variant: #52525b;
+  --secondary: #a1a1aa;
+  --on-secondary-container: #d4d4d8;
+  --background: var(--zinc-dark-bg);
+  --on-background: #f2effb;
+  --surface-container-lowest: var(--zinc-dark-surface);
+  --slate-50: #18181b;
+  --slate-100: #27272a;
+  --slate-200: #3f3f46;
+  --slate-900: #f2effb;
+  --card: var(--zinc-dark-surface);
+  --card-foreground: #f2effb;
+  --border: #27272a;
+  --input: #27272a;
+  --muted: #27272a;
+  --muted-foreground: #a1a1aa;
+}
+
+@theme inline {
+  --color-surface: var(--surface);
+  --color-surface-dim: var(--surface-dim);
+  --color-surface-bright: var(--surface-bright);
+  --color-surface-container-lowest: var(--surface-container-lowest);
+  --color-surface-container-low: var(--surface-container-low);
+  --color-surface-container: var(--surface-container);
+  --color-surface-container-high: var(--surface-container-high);
+  --color-surface-container-highest: var(--surface-container-highest);
+  --color-on-surface: var(--on-surface);
+  --color-on-surface-variant: var(--on-surface-variant);
+  --color-outline: var(--outline);
+  --color-outline-variant: var(--outline-variant);
+
+  --color-primary: var(--primary);
+  --color-on-primary: var(--on-primary);
+  --color-primary-container: var(--primary-container);
+  --color-on-primary-container: var(--on-primary-container);
+  --color-primary-fixed: var(--primary-fixed);
+  --color-primary-fixed-dim: var(--primary-fixed-dim);
+  --color-on-primary-fixed: var(--on-primary-fixed);
+  --color-on-primary-fixed-variant: var(--on-primary-fixed-variant);
+
+  --color-secondary: var(--secondary);
+  --color-on-secondary: var(--on-secondary);
+  --color-secondary-container: var(--secondary-container);
+  --color-on-secondary-container: var(--on-secondary-container);
+  --color-secondary-fixed: var(--secondary-fixed);
+  --color-secondary-fixed-dim: var(--secondary-fixed-dim);
+  --color-on-secondary-fixed: var(--on-secondary-fixed);
+  --color-on-secondary-fixed-variant: var(--on-secondary-fixed-variant);
+
+  --color-tertiary: var(--tertiary);
+  --color-on-tertiary: var(--on-tertiary);
+  --color-tertiary-container: var(--tertiary-container);
+  --color-on-tertiary-container: var(--on-tertiary-container);
+
+  --color-error: var(--error);
+  --color-on-error: var(--on-error);
+  --color-error-container: var(--error-container);
+  --color-on-error-container: var(--on-error-container);
+
+  --color-background: var(--background);
+  --color-on-background: var(--on-background);
+  --color-surface-variant: var(--surface-variant);
+
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-destructive: var(--destructive);
+
+  --color-slate-50: var(--slate-50);
+  --color-slate-100: var(--slate-100);
+  --color-slate-200: var(--slate-200);
+  --color-slate-900: var(--slate-900);
+  --color-zinc-dark-bg: var(--zinc-dark-bg);
+  --color-zinc-dark-surface: var(--zinc-dark-surface);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --sidebar-width: 260px;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-on-background);
+  font-family: var(--font-sans);
+}
